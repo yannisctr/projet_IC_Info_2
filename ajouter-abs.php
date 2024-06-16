@@ -21,6 +21,7 @@ if (!isset($_SESSION['profil'])) {
 <body>
     <div class="header">
         <img class="logo" src="img-package/logo_alb.png" alt="logo-alb">
+        <button class="b1" type="button" onclick="location.href = 'deconnexion.php';">Déconnexion</button>
     </div>
     <div class="centeredcase">
         <h1>Ajout d'une absence</h1><br>
