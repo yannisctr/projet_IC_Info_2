@@ -32,7 +32,7 @@ for ($i = 1; $i<53 ; $i++) {
     echo "<input type='text' id='mardi$i' name='mardi$i' min='0' max='24' value='0' required><br>";
     echo "<label>Mercredi</label>";
     echo "<input type='text' id='mercredi$i' name='mercredi$i' min='0' max='24' value='0' required><br>";
-    echo "<label>Jeudi</label><br>";
+    echo "<label>Jeudi</label>";
     echo "<input type='text' id='jeudi$i' name='jeudi$i' min='0' max='24' value='0' required><br>";
     echo "<label>Vendredi</label>";
     echo "<input type='text' id='vendredi$i' name='vendredi$i' min='0' max='24' value='0' required><br>";
