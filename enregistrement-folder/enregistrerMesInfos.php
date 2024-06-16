@@ -1,7 +1,7 @@
 <?php
 
 // ouverture du fichier avec les infos de tout le monde
-$file = fopen('personnes.csv', 'r');
+$file = fopen('csv-folder/salarie.csv', 'r');
 $tempFile = fopen('temp_personnes.csv', 'w'); // fichier temporaire pour écrire les modifications
 
 $pseudo = 'mmartin'; // à modifier : avec la session et tout, on aura déjà le pseudo de la personne
@@ -33,7 +33,7 @@ fclose($file);
 fclose($tempFile);
 
 // remplacement du fichier original par le fichier temporaire
-rename('temp_personnes.csv', 'personnes.csv');
+rename('temp_personnes.csv', 'csv-folder/salarie.csv');
 
 ?>
 
@@ -42,11 +42,12 @@ rename('temp_personnes.csv', 'personnes.csv');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-folder/enregistrement.css">
     <title>Modifier les coordonnées</title>
 </head>
 <body>
     <img class="logo" src="logo_alb.png" alt="logo-alb">
-    <div class="tête">
+    <div class="header">
         <a href="accueilVide.html" class="link">Accueil</a>
         <a href="mesInfos.php" class="link">Mes infos</a>
         <a href="deconnexion.html" class="link">Déconnexion</a>

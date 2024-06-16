@@ -1,4 +1,0 @@
-Nom;Prenom;"Type De Contrat";Sport;Adresse;Numero;Adressemail;identifiant;mdp;statut
-Dupont;Jean;CDI;Football;"18 rue des bg 64000 Pau";0101010101;test@gmail.com;jdupont;MotDePasse123;actif
-Martin;Marie;CDD;Tennis;"18 rue des bg 64000 Pau";0789898989;test2@gmail.com;mmartin;Pa55w0rd456;actif
-Lefevre;Pierre;Stage;Basketball;"10 Rue du Stade";0543216789;pierre.lefevre@example.com;plefevre;Secret789;actif

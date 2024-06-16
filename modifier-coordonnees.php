@@ -22,8 +22,6 @@ if (!isset($_SESSION['profil'])) {
         <img class="logo" src="img-package/logo_alb.png" alt="logo-alb">
         <button class="b1" type="button" onclick="location.href = 'deconnexion.php';">Déconnexion</button>
     </div>
-    <div>
-    </div>
     <div class="centeredcase">
         <h1>Modifier les coordonnées</h1><br>
         <form action="enregistrement-folder/enregistrer-modif.php" method="POST">

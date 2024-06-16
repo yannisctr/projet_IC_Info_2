@@ -1,19 +1,20 @@
+<?php
+    session_start();
+?>
+<html>
 <head>
-    <meta name="author" content="Lina" />
-    <link rel="shortcut icon" href="images/logo.png">
-    <title>Rechercher un salarié</title>
+    <link rel="stylesheet" href="css-folder/enregistrement.css">
+    <title>Mes Informations</title>
 </head>
 <body>
-    <img class="logo" src="logo_alb.png" alt="logo-alb">
-    <div class="tête">
-        <a href="accueilVide.html" class="link">Accueil</a>
-        <a href="mesInfos.php" class="link">Mes infos</a>
-        <a href="deconnexion.html" class="link">Déconnexion</a>
-        
+    <div class="header">
+        <img class="logo" src="img-package/logo_alb.png" alt="logo-alb">
+        <button class="b1" type="button" onclick="location.href = 'mesInfos.php';">Mes infos</button>
+        <button class="b1" type="button" onclick="location.href = 'deconnexion.php';">Déconnexion</button>
     </div>
 
     <h1>Mes infos</h1>
-    <p class="remarque">Si certaines informations vous concernant ne sont plus à pour, merci de les modifier <a href="modifMesInfos.php" class="link">ici</a></p>
+    <p>Si certaines informations vous concernant ne sont plus à pour, merci de les modifier <a href="modifMesInfos.php" class="link">ici</a></p>
 
 
 
@@ -22,10 +23,10 @@
 <?php
 
 //ouverture du fichier avec les infos de tous le monde
-$file = fopen('personnes.csv', 'r');
+$file = fopen('csv-folder/salarie.csv', 'r');
 
-//A MODIFIER : avec la session et tout, on aura déjà le pseudo de la personne
-$pseudo = 'mmartin';
+
+$pseudo = $_SESSION['pseudo'];
 
 while (($ligne = fgetcsv($file, 0, ';')) !== false) {
 

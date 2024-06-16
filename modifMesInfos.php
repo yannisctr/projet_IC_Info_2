@@ -1,21 +1,31 @@
+<?php
+session_start();
+
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['profil'])) {
+    header("Location: connexion.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-folder/ajouter-salarie-style.css">
     <title>Modifier les coordonnées</title>
 </head>
 <body>
-    <img class="logo" src="logo_alb.png" alt="logo-alb">
-    <div class="tête">
-        <a href="accueilVide.html" class="link">Accueil</a>
-        <a href="mesInfos.php" class="link">Mes infos</a>
-        <a href="deconnexion.html" class="link">Déconnexion</a>
-        
+    <div class="header">
+        <img class="logo" src="img/logo_alb.png" alt="logo-alb">
+        <button class="b1" type="button" onclick="location.href = 'mesInfos.php';">Mes infos</button>
+        <button class="b1" type="button" onclick="location.href = 'deconnexion.php';">Déconnexion</button>
     </div>
-    <div class="mesInfos">
-        <h1>Modifier les coordonnées</h1><br>
-        <form action="enregistrerMesInfos.php" method="POST">
+    <div class="centeredcase">
+        <h1>Modifier les info</h1><br>
+        <form action="enregistrement-folder/enregistrerMesInfos.php" method="POST">
             <div class="form-group">
                 <label for="adresse">Adresse :</label>
                 <input type="text" id="adresse" name="adresse" placeholder="Adresse" required>
