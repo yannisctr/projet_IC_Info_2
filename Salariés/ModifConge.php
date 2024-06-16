@@ -136,6 +136,7 @@ $conges_suivant_formatte = formatCongesConsecutifs($conges_suivant);
 
         <nav>
             <a href="../Infopage.php" class="link">Accueil</a>
+            <a href="mesInfos.php" class="link">Mes infos</a>
             <a href="../deconnexion.php" class="link">Déconnexion</a>  
         </nav>
     
