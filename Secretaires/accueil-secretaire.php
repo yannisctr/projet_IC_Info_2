@@ -37,8 +37,6 @@ if (($handle = fopen("csv-folder/demandes_secretaire.csv", "r")) !== FALSE) {
     </div>
     <div class="buttons-container">
         <button class="b2"><a href="../ajouter-salarie.php"><img src="img-package/user-2.png" alt="Ajouter un salarié"><span>Ajouter un salarié</span></a></button>
-        <button class="b2"><a href="../modifier-salarie.php"><img src="img-package/user-10.png" alt="Modifier un salarié"><span>Modifier un salarié</span></a></button>
-        <button class="b2"><a href="../supprimer-salarie.php"><img src="img-package/user-3.png" alt="Supprimer un salarié"><span>Supprimer un salarié</span></a></button>
         <button class="b2"><a href="rechercherSalarie.php"><img src="img-package/user-13.png" alt="Voir les informations des salariés"><span>Voir les informations des salariés</span></a></button>
     </div>
 
