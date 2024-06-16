@@ -8,7 +8,7 @@ Ce projet est une collaboration entre plusieurs membres pour créer un site inte
 
 - [ ] Fonctionnalité 1 : pouvoir ajouter / supprimer / modifier un salarié
 - [ ] Fonctionnalité 2 : permettre au salarié de proposer une demande de congé et connaitre son emploi du temps
-- [ ] Fonctionnalité 3 : pouvoir gerer les abcenses, les heures supplémentaires, ect pour faciliter la gestion RH
+- [ ] Fonctionnalité 3 : pouvoir gerer les abcenses, les heures supplémentaires pour faciliter la gestion RH
 
 ## Captures d'écran
 
@@ -17,19 +17,19 @@ Ce projet est une collaboration entre plusieurs membres pour créer un site inte
 
 ## Installation
 
-1. Cloner ce dépôt : `git clone https://github.com/nom-utilisateur/nom-projet.git`
-2. Aller dans le répertoire du projet : `cd nom-projet`
+1. Cloner ce dépôt : `git clone https://github.com/BlRGO/Projet_IC_Info_2.git`
+2. Aller dans le répertoire du projet : `cd Projet_IC_Info_2`
 3. Installer PHP sur votre machine
-4. ouvrir le projet via vscode et le servir sur votre machine grace a l'extention "PHP Server" ou via le terminal
+4. ouvrir le projet via VSCode et le servir sur votre machine grace a l'extention "PHP Server" ou via le terminal grace a cette ligne de commande "php -S localhost:8080"
 
 ## Utilisation
 
-2. Accéder au site à l'adresse : `http://localhost:8080` ou grace a l'extension installé précédemment
+2. Accéder au site à l'adresse : `http://localhost:8080/connexion.php` ou grace a l'extension VSCode installé précédemment
 
 ## Technologies Utilisées
 
 - HTML5
-- PHP
+- PHP8
 - CSS3
 - JavaScript
 
