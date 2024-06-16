@@ -1,40 +1,41 @@
 <?php
+session_start();
 
-// ouverture du fichier avec les infos de tout le monde
-$file = fopen('csv-folder/salarie.csv', 'r');
-$tempFile = fopen('temp_personnes.csv', 'w'); // fichier temporaire pour écrire les modifications
-
-$pseudo = 'mmartin'; // à modifier : avec la session et tout, on aura déjà le pseudo de la personne
-
-while (($ligne = fgetcsv($file, 0, ';')) !== false) {
-    if (isset($ligne[7]) && $ligne[7] == $pseudo) {
-        // mise à jour des infos
-        $ligne[4] = $_POST["adresse"];
-        $ligne[5] = $_POST["numero"];
-        $ligne[6] = $_POST["email"];
-        
-        echo "
-        <div class='mesInfos'>
-        <p>Prénom : $ligne[1] </p><br>
-        <p>Nom : $ligne[0] </p><br>
-        <p>Contrat : $ligne[2] </p><br>
-        <p>Sport : $ligne[3] </p><br>
-        <p>Adresse : $ligne[4] </p><br>
-        <p>Tel : $ligne[5] </p><br>
-        <p>Mail : $ligne[6] </p><br>
-        <p>Identifiant : $ligne[7] </p><br>
-        </div>
-        ";
-    }
-    fputcsv($tempFile, $ligne, ';'); // écriture des lignes, y compris les modifications, dans le fichier temporaire
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['profil'])) {
+    header("Location: connexion.php");
+    exit;
 }
 
-fclose($file);
-fclose($tempFile);
+// Récupérer les données du formulaire
+$adresse = $_POST["adresse"];
+$numero = $_POST["numero"];
+$email = $_POST["email"];
+$pseudo = $_SESSION['pseudo'];
 
-// remplacement du fichier original par le fichier temporaire
-rename('temp_personnes.csv', 'csv-folder/salarie.csv');
+// Ouvrir le fichier CSV en lecture et en écriture
+$file = fopen('../csv-folder/salarie.csv', 'r');
+$tempFile = fopen('../csv-folder/temp_personnes.csv', 'w'); // fichier temporaire pour écrire les modifications
 
+if ($file && $tempFile) {
+    while (($ligne = fgetcsv($file, 0, ';')) !== false) {
+        if (isset($ligne[7]) && $ligne[7] == $pseudo) {
+            // Mettre à jour les informations de l'utilisateur actuel
+            $ligne[4] = $adresse;
+            $ligne[5] = $numero;
+            $ligne[6] = $email;
+        }
+        fputcsv($tempFile, $ligne, ';'); // Écrire la ligne dans le fichier temporaire
+    }
+
+    fclose($file);
+    fclose($tempFile);
+
+    // Renommer le fichier temporaire pour remplacer l'original
+    rename('../csv-folder/temp_personnes.csv', '../csv-folder/salarie.csv');
+} else {
+    echo "Erreur lors de l'ouverture des fichiers CSV.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,23 +43,14 @@ rename('temp_personnes.csv', 'csv-folder/salarie.csv');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css-folder/enregistrement.css">
-    <title>Modifier les coordonnées</title>
+    <link rel="stylesheet" href="../css-folder/enregistrement.css">
+    <title>Enregistement des modifications</title>
 </head>
 <body>
-    <img class="logo" src="logo_alb.png" alt="logo-alb">
     <div class="header">
-        <a href="accueilVide.html" class="link">Accueil</a>
-        <a href="mesInfos.php" class="link">Mes infos</a>
-        <a href="deconnexion.html" class="link">Déconnexion</a>
-        
+        <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
+        <button class="b1" type="button" onclick="location.href = '../Salariés/Infopage.php';">Accueil</button>
     </div>
-    <div>
-    <h1>Mes nouvelles infos</h1><br>
-    </div>
-    <div class="mesInfos">
-        
-
-    </div>
+    <h3>Vos modifications ont bien été enregistrées</h3>
 </body>
 </html>

@@ -17,8 +17,9 @@ if (!isset($_SESSION['profil'])) {
     <title>Enregistement de la suppression</title>
 </head>
 <body>
-    <div class="header">
-        <img class="logo" src="img-package/logo_alb.png" alt="logo-alb">
+<div class="header">
+        <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
+        <button class="b1" type="button" onclick="location.href = '../Salariés/Infopage.php';">Accueil</button>
     </div>
     <?php
 
