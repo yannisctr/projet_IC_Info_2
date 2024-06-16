@@ -26,7 +26,7 @@ if (!isset($_SESSION['profil'])) {
             echo "<a href='accueil-secretaire.php' class='link'>Accueil</a>";
         }
         ?>
-        <a href="deconnexion.php" class="link">Déconnexion</a>
+        <a href="../deconnexion.php" class="link">Déconnexion</a>
         
     </div>
 

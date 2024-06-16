@@ -135,8 +135,8 @@ $conges_suivant_formatte = formatCongesConsecutifs($conges_suivant);
         <img class="logo" src="img/logo_alb.png" alt="logo-alb">
 
         <nav>
-            <a href="accueil.html" class="link">Accueil</a>
-            <a href="deconnexion.html" class="link">Déconnexion</a>  
+            <a href="../Infopage.php" class="link">Accueil</a>
+            <a href="../deconnexion.php" class="link">Déconnexion</a>  
         </nav>
     
         <table id="TableCP">

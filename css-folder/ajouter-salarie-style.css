@@ -47,10 +47,28 @@ img {
     color: #000000;
 }
 
+.forms-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px; /* Ajoute un espace entre les conteneurs */
+}
+
+.form-container {
+    flex: 1; /* Permet aux conteneurs de prendre un espace égal */
+    margin: 0 10px; /* Marge horizontale pour un espace autour des conteneurs */
+    background-color: #93B2E4;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 form {
-    text-align: left;
-    margin-top: 2em;
-    margin-bottom: 20px;
+    width: 100%; /* Prendre toute la largeur du conteneur */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +80,6 @@ form {
     align-items: flex-start;
     margin-bottom: 1.5em; /* Espacement entre les groupes de formulaires */
     width: 100%;
-    max-width: 400px; /* Limite la largeur du groupe */
 }
 
 .form-group label {
@@ -72,6 +89,8 @@ form {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
+select,
 input[type="submit"] {
     padding: 10px;
     margin: 5px 0;
@@ -87,11 +106,11 @@ input[type="submit"] {
     background-color: #1E4F9D;
     color: #E8E8F2;
     cursor: pointer;
+    width: auto; /* Ajuste la largeur du bouton de soumission */
 }
 
 .centeredcase {
     margin-top: 3%;
-    background-color: #93B2E4;
     padding: 2em;
     padding-left: 10%;
     padding-right: 10%;
@@ -108,8 +127,15 @@ input[type="submit"] {
         padding: 20px;
     }
 
+    .forms-container {
+        flex-direction: column;
+        gap: 20px; /* Ajoute un espace entre les conteneurs */
+    }
+
     input[type="text"],
     input[type="email"],
+    input[type="tel"],
+    select,
     input[type="submit"] {
         width: 100%;
     }
