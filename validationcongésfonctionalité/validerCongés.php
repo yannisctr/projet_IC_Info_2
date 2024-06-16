@@ -7,8 +7,8 @@
 <body>
     <img class="logo" src="logo_alb.png" alt="logo-alb">
     <div class="tête">
-        <a href="accueil.html" class="link">Accueil</a>
-        <a href="deconnexion.html" class="link">Déconnexion</a>
+        <a href="../Administrateur/accueil-admin.php" class="link">Accueil</a>
+        <a href="../deconnexion.php" class="link">Déconnexion</a>
         
     </div>
 
