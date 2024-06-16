@@ -23,6 +23,7 @@ if (!isset($_SESSION['profil'])) {
     <?php
     $jours = $_POST["jour"];
     $mois = $_POST["mois"];
+    $chemin = "salariés/".$_SESSION["pseudo"]."/absences.csv";
 
     $date = $jours."-".$mois;
     $status = 0;
@@ -31,8 +32,8 @@ if (!isset($_SESSION['profil'])) {
         array($date, $status));
 
 
-    function ecrire($infos) {
-        $filePath = "absences.csv";
+    function ecrire($infos, $chemin) {
+        $filePath = $chemin;
         $file = fopen($filePath, "a+");
         if ($file === false) {
             die("Erreur: Impossible d'ouvrir le fichier $filePath");
@@ -46,8 +47,8 @@ if (!isset($_SESSION['profil'])) {
         fclose($file);
     }
 
-    function afficherTableau2D() {
-        $filePath = "absences.csv";
+    function afficherTableau2D($chemin) {
+        $filePath = $chemin;
         $row = 0;
         if (($handle = fopen($filePath, "r"))) {
             echo "<table border='1'>";
@@ -85,10 +86,10 @@ if (!isset($_SESSION['profil'])) {
     }
 
 
-    ecrire($infos);
-    afficherTableau2D();
+    ecrire($infos, $chemin);
+    afficherTableau2D($chemin);
     ?>
 
-    <button><a href="accueil-admin.php">Retour</a></button>
+    <button><a href="Administrateur/accueil-admin.php">Retour</a></button>
 </body>
 </html>
