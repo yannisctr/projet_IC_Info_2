@@ -3,7 +3,7 @@ body{
     background-color: #E8E8F2;
     display: grid;
     grid-template-columns: repeat(10,1fr) ;
-    grid-template-rows: repeat(10,1fr);
+    grid-template-rows: 30px 60px repeat(8,1fr);
 }
 
 @media screen and (max-width: 600px) {
