@@ -3,7 +3,7 @@ body{
     background-color: #E8E8F2;
     display: grid;
     grid-template-columns: repeat(10,1fr) ;
-    grid-template-rows: 30px 60px repeat(8,1fr);
+    grid-template-rows: 60px 60px repeat(8,1fr);
 }
 
 @media screen and (max-width: 600px) {
@@ -60,7 +60,9 @@ h1 {
     grid-row: 2;
 }
 
-table {
+table{
     grid-column: 2 / 8; 
-    grid-row: 2;   
+    grid-row: 3;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 3%;
 }
