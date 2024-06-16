@@ -26,7 +26,7 @@ if (!isset($_SESSION['profil'])) {
         <h1>Ajout d'une absence</h1><br>
         <!--une absence qui vient d'être ajouter est par défaut injustifié (=0)-->
 
-        <form action="enregistrer-abs.php" method="POST">
+        <form action="../enregistrer-abs.php" method="POST">
             <label for="jours">Jour</label><br>
             <input type="number" id="jour" name="jour" min="1" max="31" required>
             <label for="mois">mois</label><br>

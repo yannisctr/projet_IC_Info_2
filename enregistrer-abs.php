@@ -23,7 +23,8 @@ if (!isset($_SESSION['profil'])) {
     <?php
     $jours = $_POST["jour"];
     $mois = $_POST["mois"];
-    $chemin = "salariés/".$_SESSION["pseudo"]."/absences.csv";
+    $chemin1 = "salariés/".$_SESSION["pseudo"]."/Absences.csv";
+    $chemin2 = "salariés/".$_SESSION["pseudo"]."/RecapMensuel.csv";
 
     $date = $jours."-".$mois;
     $status = 0;
@@ -45,6 +46,23 @@ if (!isset($_SESSION['profil'])) {
             }
         }
         fclose($file);
+    }
+
+    function verifDoublons($chemin){
+        $temp = fopen('temp.csv', 'w');
+        if (($handle = fopen($chemin, "a+"))) {
+            while (($data = fgetcsv($handle, 1000, ";"))) {
+                if ($data[2] == 0) {
+                    $data[8] = 1;
+                    $data[5] = "toto";
+                    $data[6] = "toto";
+                }
+                fputcsv($temp, $data, ';');
+            }
+            fclose($handle);
+            fclose($temp);
+            rename('temp.csv', $chemin);
+        }
     }
 
     function afficherTableau2D($chemin) {
@@ -86,8 +104,9 @@ if (!isset($_SESSION['profil'])) {
     }
 
 
-    ecrire($infos, $chemin);
-    afficherTableau2D($chemin);
+    ecrire($infos, $chemin1);
+    afficherTableau2D($chemin1);
+    verifDoublons($chemin2);
     ?>
 
     <button><a href="Administrateur/accueil-admin.php">Retour</a></button>
