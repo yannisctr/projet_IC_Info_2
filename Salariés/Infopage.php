@@ -19,6 +19,7 @@
 
     <nav>
         <a href="accueil.html" class="link">Accueil</a>
+        <a href="mesInfos.php" class="link">Mes infos</a>
         <a href="deconnexion.html" class="link">Déconnexion</a>  
     </nav>
 
