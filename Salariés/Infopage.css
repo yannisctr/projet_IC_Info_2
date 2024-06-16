@@ -1,0 +1,333 @@
+
+body{
+    margin: 0%;
+    height: 100vh;
+    background-color: #E8E8F2;
+    display: grid;
+    grid-template-columns: repeat(10,1fr) ;
+    grid-template-rows:  repeat(10,1fr);
+    font-family: Montserrat;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
+nav {
+    background-color: #1E4F9D;
+    width: 100%;
+    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-row: 1; /* elmt dans la première ligne */
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #E8E8F2;
+    text-align: center;
+    padding: 20px 0; 
+    box-sizing: border-box; 
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit; /* pour garder la couleur du parent */
+    display: inline-block; 
+    margin-left: 20px; 
+}
+
+.logo{
+    width: 80%;
+    margin: auto;
+    grid-column: 1 / 2; /* elmt prend toute la ligne */
+    grid-row: 1;
+    position: relative;
+}
+
+.calendar-box
+{
+    grid-area: 4/2/10/6;
+    background-color: #ffffff82;
+    border: solid;
+    border-color: #F1ADAC;
+    border-radius: 5%;
+}
+
+.jourhoraire
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+
+
+.calendar 
+{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(8,1fr);
+}
+
+.semaine
+{
+    grid-area: 2/1/2/8;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.infotext 
+{
+    margin-top: 5%;
+    grid-area: 2/7/9/10;
+    background-color: #C6D2EC;
+    border-radius: 5%;
+    display: grid; 
+    grid-template-rows: repeat(10,1fr);
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+.jauge-boite
+{
+    grid-area: 2/2/2/6;
+    background-color:#C6D2EC;
+    border-radius: .5em;
+    height: 40%;
+    align-self: end;
+}
+#jauge 
+{
+    height: 100%;
+    background-color: #F1ADAC;
+    border-radius: .4em; 
+}
+
+#boutons
+{
+    grid-area: 9/7/10/10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} 
+
+#boutons a 
+{
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    background-color: #F1ADAC;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 1.5em;
+    box-shadow: 4px 4px 4px #00000054;  
+    transition: all .3s ease-out;
+}
+
+#boutons a:hover 
+{
+    color: #E8E8F2;   
+}
+
+
+#utilise 
+{
+    grid-area: 3/2/3/2;
+    font-size:x-large;
+    font-weight: 600;
+
+}
+
+#slash 
+{
+    grid-area: 3/3/3/4;
+    justify-self: end;
+    font-size:x-large;
+    font-weight: 600;
+}
+
+#totaux
+{
+    grid-area: 3/5/3/5;
+    justify-self: end;
+    font-size:x-large;
+    font-weight: 600;
+}
+
+h1 
+{   margin: 0%;
+    justify-self: center;
+    align-self: center;
+    grid-area: 1/1/1/3;
+    color: #000000;
+    z-index: 2;
+}
+
+h3 
+{
+    margin: 0%;
+    align-self: center;
+}
+
+.pi 
+{
+    height: 70%;
+    width: 60%;
+    background-color: #9ebaf5 ;
+    border-radius: 10%;
+    align-content: center;
+    justify-self: center;
+
+}
+
+.conge {
+    height: 70%;
+    width: 60%;
+    background-color: #9ebaf5 ;
+    border-radius: 10%;
+    align-content: center;
+    justify-self: center;
+    background-color: #fad0cf ;
+
+}
+
+.Absence 
+{
+    color: #f32424;
+}
+
+#mois 
+{
+    grid-area: 1/2/1/7;
+    justify-self: center;
+
+}
+
+#jours
+{
+    font-weight: normal;
+    align-self: center;
+    justify-self: center;
+    z-index: 2;
+}
+
+#ligne1 
+{
+    grid-area: 3/1/3/8;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    z-index: 2;
+}
+#ligne2
+{
+    grid-area: 4/1/4/8;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    z-index: 2;
+}
+
+#ligne3 
+{
+    grid-area: 5/1/5/8;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    z-index: 2;
+}
+#ligne4
+{
+    grid-area: 6/1/6/8;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    z-index: 2;
+}
+#ligne5 
+{
+    grid-area: 7/1/7/8;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    z-index: 2;
+}
+#ligne6
+{
+    grid-area: 8/1/8/8;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    z-index: 2;
+}
+#prev
+{
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    border-color: #F1ADAC;
+    background: transparent;
+    cursor: pointer;
+    grid-area: 1/1/1/1;
+    height: 22%;
+    width: 15%;
+    align-self: center;
+    justify-self: center;
+    transform: rotate(-130deg);
+
+}
+#next
+{
+    border-style: solid;
+    border-width: 0.25em 0 0 0.25em ;
+    border-color: #F1ADAC;
+    background: transparent;
+    cursor: pointer;
+    grid-area: 1/7/1/7;
+    height: 22%;
+    width: 15%;
+    align-self: center;
+    justify-self: center;
+    transform:  rotate(130deg);
+}

@@ -1,0 +1,58 @@
+body{
+    margin: 0%;
+    height: 100vh;
+    background-color: #E8E8F2;
+    display: grid;
+    grid-template-columns: repeat(10,1fr) ;
+    grid-template-rows:  repeat(10,1fr);
+    font-family: Montserrat;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
+nav {
+    background-color: #1E4F9D;
+    width: 100%;
+    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-row: 1; /* elmt dans la première ligne */
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #E8E8F2;
+    text-align: center;
+    padding: 20px 0; 
+    box-sizing: border-box; 
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit; /* pour garder la couleur du parent */
+    display: inline-block; 
+    margin-left: 20px; 
+}
+
+.logo{
+    width: 80%;
+    margin: auto;
+    grid-column: 1 / 2; /* elmt prend toute la ligne */
+    grid-row: 1;
+    position: relative;
+}
+
+p
+{
+    grid-area: 4/3/5/9;
+    justify-self: center;
+    font-weight: 800;
+    font-size: x-large;
+}

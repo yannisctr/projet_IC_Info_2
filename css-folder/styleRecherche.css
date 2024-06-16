@@ -1,0 +1,142 @@
+body{
+    margin: 0%;
+    background-color: #E8E8F2;
+    display: grid;
+    grid-template-columns: repeat(10,1fr) ;
+    grid-template-rows:  repeat(10,1fr);
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
+.tête {
+    background-color: #1E4F9D;
+    width: 100%;
+    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-row: 1; /* elmt dans la première ligne */
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #E8E8F2;
+    text-align: center;
+    padding: 20px 0; 
+    box-sizing: border-box; 
+}
+
+.tête a {
+    text-decoration: none;
+    color: inherit; /* pour garder la couleur du parent */
+    display: inline-block; 
+    margin-left: 20px; 
+}
+
+.logo{
+    width: 80%;
+    margin: auto;
+    grid-column: 1 / 2; /* elmt prend toute la ligne */
+    grid-row: 1;
+    position: relative;
+}
+
+h1 {
+    margin-left: 1em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #ffffff;
+    font-family: 'Exo', sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    grid-column: 1 / 5; /* elmt prend toute la ligne */
+    grid-row: 2;
+}
+
+button {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #C6D2EC ;
+    border: 0.1rem solid black ;
+    margin-top: 2%;
+    background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+  
+  button:hover {
+    background-color: #92afefc0;
+  }
+  
+  button:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+
+.recherche {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 10px; 
+}
+
+.recherche input {
+    margin: 7%;
+}
+
+.loupe-icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+.zoneRecherche{
+    border-radius: 10px;
+    background-color: #C6D2EC ;
+    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-row: 3;
+    margin: 8px;
+
+}
+
+.zoneResultat{
+    border-radius: 10px;
+    background-color: #C6D2EC ;
+    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-row: 4 /-1;
+    margin: 8px;
+    position: relative;
+
+}
+
+h3{
+
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+    font-style: bold;
+    margin-left: 3%;
+}
+
+.result{
+    font-family: 'Exo', sans-serif;
+    margin-left: 3%;
+
+}
+
