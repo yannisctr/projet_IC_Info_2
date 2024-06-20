@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +11,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="img/logo.png">
+        <link rel="shortcut icon" href="../img-package/logo_alb.png">
         <title>Gestion Conge</title>
     
     </head>
     <body>
-        <img class="logo" src="img/logo_alb.png" alt="logo-alb">
+        <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
 
         <nav>
             <a href="Infopage.php" class="link">Accueil</a>
@@ -34,10 +38,10 @@ function ajouterCongeCSV($date_conge) {
     $jour = date('j', $timestamp); 
 
     // Format "mois-jour"
-    $date_formattee = "$mois-$jour";
+    $date_formattee =array($_SESSION['nom'],$_SESSION['prenom'],"$mois-$jour",$_SESSION['pseudo'] ) ;
 
    
-    $csvFile = 'demandeconge.csv';
+    $csvFile = '../csv-folder/demandeconges.csv';
     if (($handle = fopen($csvFile, 'a+')) !== FALSE) {
         fputcsv($handle, [$date_formattee]);
         fclose($handle);

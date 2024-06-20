@@ -38,7 +38,7 @@
             $path = '../Salariés/'.$userId.'/horaires.csv'; 
             //echo($path);
         // ouverture du fichier CSV en mode écriture
-        $file = fopen('../Salariés/'.$userId.'/horaires.csv', 'a+');
+        $file = fopen('../Salariés/'.$userId.'/horaires.csv', 'w');
       
         // ecriture les en-têtes dans le fichier CSV
         fputcsv($file, ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']);

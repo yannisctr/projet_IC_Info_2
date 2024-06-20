@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 header('Content-Type: text/html; charset=utf-8');
 require('pdfgeneration/fpdf.php'); // Chemin vers la bibliothèque FPDF
 
@@ -97,8 +98,8 @@ function genererPDFConges($data, $mois_actuel,$data_recap) {
 }
 
 // Lire le fichier CSV
-$data = lireCSV('congés.csv');
-$data_recap = lireCSV('RecapMensuel.csv');
+$data = lireCSV($_SESSION['pseudo'].'/congés.csv');
+$data_recap = lireCSV($_SESSION['pseudo'].'/RecapMensuel.csv');
 
 // Obtenir le mois actuel
 $date_actuel = getdate();

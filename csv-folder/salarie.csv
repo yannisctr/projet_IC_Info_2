@@ -1,3 +1,8 @@
-Gaston;Jean;CDD;Danse;"Acrogym Club local B5";06593300;Kaaguyu@gmail.com;lJGaston;28619508f0666007a5cbca68753d33dc;Salarié
-kaaguyu;Jean;CDD;Danse;"Acrogym Club local B5";06593300;Kaaguyu@gmail.com;lJkaaguyu;d571d945546a656e99cd422f348c1cbe;Salarié
-
+Nom;Prenom;Type De Contrat;Sport;Adresse;Numero;Adressemail;identifiant;mdp;statut
+Decembre;Chris;CDD;Danse;"Acrogym Club local B5";06593300;Kaaguyu@gmail.com;lCDecembre52;804a4efa42d66e0c026f06617a45a19c;Salarié
+Gaston;Pierre;CDD;Danse;"Acrogym Club local B5";06593300;Kaaguyu@gmail.com;lPGaston;43acda0ba6cd492f78580b548045246e;Salarié
+Jean;Yannis;CDI;Danse;"Acrogym Club local B5";06593300;Kaaguyu@gmail.com;lYJean;ea9616a15ffdf1fcf87f20ba83f10bcd;Salarié
+Dupont;Jacques;CDD;Ski;"Maison du ski";06593300;skieurdu64@gmail.com;lJDupont;85448011db58db88f93491b82d0fe731;Salarié
+"De la mer";Jacques;CDD;Tir;"Maison du tir a l'arc";0659330001;robindesboisdu64@gmail.com;"lJDe la mer";7a2c6b60129aa5eb05bfa1cc73ef9c3f;Salarié
+"De la mer";Jacques;CDD;Tir;"Maison du tir a l'arc";0659330001;robindesboisdu64@gmail.com;"lJDe la mer32";53bd9bb7b4a104cfbc2515572921b262;Salarié
+Hiboux;Daniel;CDD;Judo;"Ninja Street";065933000132;ninjadu64@gmail.com;lDHiboux;3e1d48b9bc0c372aebb6019fc994652d;Salarié

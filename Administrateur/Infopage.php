@@ -17,8 +17,8 @@ session_start();
     <img class="logo" src="img/logo_alb.png" alt="logo-alb">
     
     <nav>
-        <a href="accueil.html" class="link">Accueil</a>
-        <a href="deconnexion.html" class="link">Déconnexion</a>  
+        <a href="accueil-admin.php" class="link">Accueil</a>
+        <a href="../deconnexion.php" class="link">Déconnexion</a>  
     </nav>
 
     <div class="calendar-box">

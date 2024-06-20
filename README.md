@@ -10,11 +10,6 @@ Ce projet est une collaboration entre plusieurs membres pour créer un site inte
 - [ ] Fonctionnalité 2 : permettre au salarié de proposer une demande de congé et connaitre son emploi du temps
 - [ ] Fonctionnalité 3 : pouvoir gerer les abcenses, les heures supplémentaires pour faciliter la gestion RH
 
-## Captures d'écran
-
-![Capture d'écran 1](screenshots/screenshot1.png)
-![Capture d'écran 2](screenshots/screenshot2.png)
-
 ## Installation
 
 1. Cloner ce dépôt : `git clone https://github.com/BlRGO/Projet_IC_Info_2.git`

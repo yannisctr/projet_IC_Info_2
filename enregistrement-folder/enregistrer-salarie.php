@@ -17,9 +17,9 @@ if (!isset($_SESSION['profil'])) {
     <title>Enregistrer un salarié</title>
 </head>
 <body>
-    <div class="header">
+<div class="header">
         <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
-        <button class="b1" type="button" onclick="location.href = 'deconnexion.php';">Déconnexion</button>
+        <button class="b1" type="button" onclick="location.href = '../Administrateur/accueil-admin.php';">Accueil</button>
     </div>
     <?php
     $nom = $_POST["nom"];
@@ -157,14 +157,14 @@ if (!isset($_SESSION['profil'])) {
 
     function ecrire($infos, $statut) {
         if ($statut == 'Salarié') {
-            echo 'Rentre dans la fonction';
+            //echo 'Rentre dans la fonction';
             $filePath = "../csv-folder/folder-section/";
             $fileName = $filePath . $infos[0][3] . ".csv";
 
             creerDossierSiNonExistant($filePath);
 
             if (!file_exists($fileName)) {
-                echo "Le fichier n'existe pas";
+                //echo "Le fichier n'existe pas";
                 $tab = array(array('Nom','Prenom','Type De Contrat','Section','Adresse','Numero','Adressemail','identifiant','mdp','statut'));
                 creerCSV_cache($fileName, $tab);
             }
@@ -257,7 +257,7 @@ if (!isset($_SESSION['profil'])) {
     $infos = array(
         array($nom, $prenom, $contrat, $section, $adresse, $numero, $AdresseMail, $pseudo, $mdp1, $statut)
     );
-    print_r($infos[0][3]);
+    //print_r($infos[0][3]);
     ecrire($infos, $statut);
 
     CreerDossier($pseudo, $statut);

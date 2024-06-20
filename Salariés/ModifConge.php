@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Fonction pour lire les données du fichier CSV
 function lireCSV($fichier) {
@@ -85,7 +86,7 @@ function formatCongesConsecutifs($dates) {
 }
 
 // Lire le fichier CSV
-$data = lireCSV('congés.csv');
+$data = lireCSV($_SESSION['pseudo'].'/congés.csv');
 
 // Obtenir le mois et le jour actuels
 $date_actuel = getdate();
@@ -114,9 +115,10 @@ for ($index = 1; $index < count($data); $index++) {
 
 // Formater les jours de congé pour les périodes consécutives
 $conges_passe_formatte = formatCongesConsecutifs($conges_passe);
-$conges_suivant_formatte = formatCongesConsecutifs($conges_suivant);
+$conges_suivant_formatte = !empty($conges_suivant) ? formatCongesConsecutifs($conges_suivant) : [];
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,16 +129,17 @@ $conges_suivant_formatte = formatCongesConsecutifs($conges_suivant);
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="img/logo.png">
+        <link rel="shortcut icon" href="../img-package/logo_alb.png">
         <title>Congés</title>
     
     </head>
     <body>
-        <img class="logo" src="img/logo_alb.png" alt="logo-alb">
+        <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
 
         <nav>
-            <a href="accueil.html" class="link">Accueil</a>
-            <a href="deconnexion.html" class="link">Déconnexion</a>  
+            <a href="../Infopage.php" class="link">Accueil</a>
+            <a href="mesInfos.php" class="link">Mes infos</a>
+            <a href="../deconnexion.php" class="link">Déconnexion</a>  
         </nav>
     
         <table id="TableCP">

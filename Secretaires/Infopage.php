@@ -13,16 +13,16 @@ echo "<script>localStorage.setItem('user_id', '$userId');</script>";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Infopage.css" />
-    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="shortcut icon" href="../img-package/logo_alb.png">
     <title>Rechercher un salarié</title>
 </head>
 <body>
-    <img class="logo" src="img/logo_alb.png" alt="logo-alb">
+    <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
     
 
     <nav>
-        <a href="accueil.html" class="link">Accueil</a>
-        <a href="deconnexion.html" class="link">Déconnexion</a>  
+        <a href="accueil-secretaire.php" class="link">Accueil</a>
+        <a href="../deconnexion.php" class="link">Déconnexion</a> 
     </nav>
 
     <div class="calendar-box">

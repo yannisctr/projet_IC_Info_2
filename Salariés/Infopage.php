@@ -14,12 +14,13 @@
     <title>Rechercher un salarié</title>
 </head>
 <body>
-    <img class="logo" src="img/logo_alb.png" alt="logo-alb">
+    <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
     
 
     <nav>
-        <a href="accueil.html" class="link">Accueil</a>
-        <a href="deconnexion.html" class="link">Déconnexion</a>  
+        <a href="Infopage.php" class="link">Accueil</a>
+        <a href="../mesInfos.php" class="link">Mes infos</a>
+        <a href="../deconnexion.php" class="link">Déconnexion</a>  
     </nav>
 
     <div class="calendar-box">

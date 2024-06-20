@@ -7,13 +7,13 @@ if (!isset($_SESSION['profil'])) {
     exit;
 }
 
-$demandes = array();
+/**$demandes = array();
 if (($handle = fopen("csv-folder/demandes_secretaire.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $demandes[] = $data;
     }
     fclose($handle);
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -36,27 +36,12 @@ if (($handle = fopen("csv-folder/demandes_secretaire.csv", "r")) !== FALSE) {
         <h3>Que souhaitez-vous faire :</h3>
     </div>
     <div class="buttons-container">
-        <button class="b2"><a href="../ajouter-salarie.php"><img src="img-package/user-2.png" alt="Ajouter un salarié"><span>Ajouter un salarié</span></a></button>
-        <button class="b2"><a href="rechercherSalarie.php"><img src="img-package/user-13.png" alt="Voir les informations des salariés"><span>Voir les informations des salariés</span></a></button>
+        <button class="b2"><a href="../ajouter-salarie.php"><img src="../img-package/user-2.png" alt="Ajouter un salarié"><span>Ajouter un salarié</span></a></button>
+        <button class="b2"><a href="rechercherSalarie.php"><img src="../img-package/user-13.png" alt="Voir les informations des salariés"><span>Voir les informations des salariés</span></a></button>
+        <button class="b2"><a href="../validerCongés.php"><img src="../img-package/user-14.png" alt="Voir les congés"><span>Voir les demandes de congés</span></a></button>
     </div>
 
-    <div class="demandes">
-    <?php foreach ($demandes as $demande): ?>
-        <div class="demande">
-            <?php echo $demande[0] . " " . $demande[1] . " a demandé un congé le " . $demande[2]; ?>
-            <form method="post" action="../enregistrement-folder/enregistrerValidation.php">
-                <input type="hidden" name="nom" value="<?php echo $demande[0]; ?>">
-                <input type="hidden" name="prenom" value="<?php echo $demande[1]; ?>">
-                <input type="hidden" name="date" value="<?php echo $demande[2]; ?>">
-                <select name="reponse">
-                    <option value="oui">Oui</option>
-                    <option value="non">Non</option>
-                </select>
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
-        <?php endforeach; ?>
-        </div>
-    </div>
+    
+    
 </body>
 </html>
