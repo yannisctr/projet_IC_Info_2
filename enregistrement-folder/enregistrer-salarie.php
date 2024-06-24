@@ -73,6 +73,18 @@ if (!isset($_SESSION['profil'])) {
             );
             creerCSV_cache($nomFichier . "/horaires.csv", $tab);
             $tab = array(array("Nom", "Prenom", "Type de Contrat", "Congés Posés (jours)", "Congés restant (jours)", "Total réel (heures)", "Heures supplementaires", "Absence justifiée", "Absence non justifiée"));
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
+            $tab[] = array("".$donnees[0][0]."","".$donnees[0][1]."","".$donnees[0][2]."",0,0,0,0,0,0);
             creerCSV_cache($nomFichier . "/RecapMensuel.csv", $tab);
             $tab = array(array("congés1", "congés2", "congés3", "congés4", "congés5", "congés6", "congés7", "congés8", "congés9", "congés10", "congés11", "congés12", "congés13", "congés14", "congés15", "congés16", "congés17", "congés18", "congés19", "congés20", "congés21", "congés22", "congés23", "congés24", "congés25", "congés26", "congés27", "congés28", "congés29", "congés30"));
             creerCSV_cache($nomFichier . "/congés.csv", $tab);
