@@ -20,8 +20,8 @@ session_start();
 
         <nav>
             <a href="Infopage.php" class="link">Accueil</a>
-            <a href="mesInfos.php" class="link">Mes infos</a>
-            <a href="deconnexion.html" class="link">Déconnexion</a>  
+            <a href="../mesInfos.php" class="link">Mes infos</a>
+            <a href="../deconnexion.php" class="link">Déconnexion</a>  
         </nav>
     
         <?php
