@@ -24,7 +24,6 @@ img {
     display: flex;
     justify-content: flex-start; /* Alignement à gauche */
     align-items: center;
-    padding: 0px 20px;
     box-sizing: border-box;
 }
 
@@ -33,8 +32,13 @@ img {
     height: 20%;
 }
 
+.button-container {
+    margin-left: 70%;
+    align-items: center;
+    justify-content: center;
+}
+
 .b1 {
-    margin-left: 70.85%;
     padding: 32px;
     background-color: #1E4F9D;
     font-size: 15px;
