@@ -21,8 +21,10 @@ if (!isset($_SESSION['profil'])) {
 <body>
     <div class="header">
         <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
-        <button class="b1" type="button" onclick="location.href = 'deconnexion.php';">Déconnexion</button>
-        <button class="b1" type="button" onclick="location.href = 'accueil-section.php.php';">Accueil</button>
+        <div class="button-container">
+            <button class="b1" type="button" onclick="location.href = 'accueil-section.php';">Accueil</button>
+            <button class="b1" type="button" onclick="location.href = 'deconnexion.php';">Déconnexion</button>
+        </div>
     </div>
     <div class="centeredcase">
         <h1>Ajout d'une absence</h1><br>
@@ -32,7 +34,7 @@ if (!isset($_SESSION['profil'])) {
         <label for="Nom">Nom</label><br>
         <select name="userId" id="selection">
         <?php 
-            $fichier_section = fopen("../csv-folder/folder-section/Danse.csv",'r');
+            $fichier_section = fopen("../csv-folder/folder-section/".$_SESSION['section'].".csv",'r');
             while (($read_data = fgetcsv($fichier_section,1000,";")) !== FALSE) 
                 {
 

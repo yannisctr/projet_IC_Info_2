@@ -12,7 +12,7 @@ body {
 
 img {
     width: 100px;
-    height: 100px;
+    height: 50px;
 }
 
 .header {
@@ -21,7 +21,7 @@ img {
     display: flex;
     justify-content: flex-start; /* Alignement à gauche */
     align-items: center;
-    padding: 10px 20px;
+    padding-left: 2%;
     box-sizing: border-box;
 }
 
@@ -30,16 +30,24 @@ img {
     height: 20%;
 }
 
+.button-container {
+    margin-left: 70%;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .b1 {
-    margin-left: 70.85%;
-    padding: 32px;
+    margin: 0px;
+    padding: 25px; /* Réduire le padding pour un meilleur rendu */
     background-color: #1E4F9D;
-    font-size: 17px;
+    font-size: 15px;
     color: #ffffff;
     cursor: pointer;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     transition: color 0.3s, background-color 0.3s;
     border: none;
+    text-align: center; /* Centrer le texte */
 }
 
 .b1:hover {
@@ -90,6 +98,7 @@ label {
     margin-top: 5%;
     margin-bottom: 5%;
 }
+
 input[type="submit"] {
     margin-top: 5%;
 }
