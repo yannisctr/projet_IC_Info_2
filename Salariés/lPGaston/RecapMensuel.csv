@@ -1,5 +1,5 @@
 Nom,Prenom,"Type de Contrat","Congés Posés (jours)","Congés restant (jours)","Total réel (heures)","Heures supplementaires","Absence justifiée","Absence non justifiée"
-Pierre,Gaston,CDD,2,26,8,2,1,0
+Pierre,Gaston,CDD,2,26,8,2,1,2
 Pierre,Gaston,CDD,0,26,4,0,0,0
 Pierre,Gaston,CDD,2,26,8,2,1,0
 Pierre,Gaston,CDD,2,26,8,2,1,0
