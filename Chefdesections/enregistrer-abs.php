@@ -25,9 +25,12 @@ if (!isset($_SESSION['profil'])) {
         </div>
     </div>
     <?php
+    // Récupérer les données du formulaire
     $jours = $_POST["jour"];
     $mois = $_POST["mois"];
     $userId = $_POST['userId'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
 
     $date = $mois."-".$jours;
     $status = 0;
@@ -35,8 +38,7 @@ if (!isset($_SESSION['profil'])) {
     $infos = array(
         array($date, $status));
 
-
-    function ecrire($infos,$userId) {
+    function ecrire($infos, $userId) {
         $filePath = "../Salariés/".$userId."/Absences.csv";
         $file = fopen($filePath, "a+");
         if ($file === false) {
@@ -50,6 +52,21 @@ if (!isset($_SESSION['profil'])) {
         }
         fclose($file);
     }
+
+    function ecrireAbsencesTotales($nom, $prenom, $date) {
+        $filePath = "../csv-folder/absences-totales.csv";
+        $file = fopen($filePath, "a+");
+        if ($file === false) {
+            die("Erreur: Impossible d'ouvrir le fichier $filePath");
+        }
+        $data = array($nom, $prenom, $date, "0");
+        if (fputcsv($file, $data, ";") === false) {
+            fclose($file);
+            die("Erreur: Impossible d'écrire dans le fichier $filePath");
+        }
+        fclose($file);
+    }
+
     function modifyCSV($filePath, $lineNumber) {
         // Lire le fichier CSV dans un tableau
         $file = fopen($filePath, 'r');
@@ -83,12 +100,10 @@ if (!isset($_SESSION['profil'])) {
         echo "La valeur de la colonne 4 de la ligne $lineNumber a été incrémentée de 1.\n";
     }
 
-
-
     function afficherTableau2D($userId) {
         $filePath = "../Salariés/".$userId."/Absences.csv";
         $row = 0;
-        $tampon =0;
+        $tampon = 0;
         if (($handle = fopen($filePath, "r"))) {
             echo "<table border='1'>";
             while (($data = fgetcsv($handle, 1000, ";"))) {
@@ -104,9 +119,9 @@ if (!isset($_SESSION['profil'])) {
                     echo "</tr>";
                     echo "<tr>";
                     echo "<td>$data[0]</td>";
-                    if ($data[1]==0){
+                    if ($data[1] == 0){
                         echo "<td>injustifiée</td>";
-                    }if($data[1]==1){
+                    } else if ($data[1] == 1){
                         echo "<td>justifiée</td>";
                     }
                     
@@ -114,16 +129,14 @@ if (!isset($_SESSION['profil'])) {
                     $row += 1;
                 } else {
                     echo "<td>$data[0]</td>";
-                    if ($data[1]==0){
+                    if ($data[1] == 0){
                         echo "<td>injustifiée</td>";
-                    }if($data[1]==1){
+                    } else if ($data[1] == 1){
                         echo "<td>justifiée</td>";
                     }
                 }
                 echo "</tr>";
-
               }
-                
             }
             echo "</table>";
             fclose($handle);
@@ -132,11 +145,14 @@ if (!isset($_SESSION['profil'])) {
         }
     }
 
+    // Chemin du fichier CSV récapitulatif mensuel
     $chemin = "../Salariés/".$userId."/RecapMensuel.csv";
-    ecrire($infos,$userId);
-    modifyCSV($chemin,$mois+1);
-    afficherTableau2D($userId);
 
+    // Écriture des données dans les fichiers CSV
+    ecrire($infos, $userId);
+    ecrireAbsencesTotales($nom, $prenom, $date);
+    modifyCSV($chemin, $mois + 1);
+    afficherTableau2D($userId);
     ?>
 
     <button><a href="accueil-section.php">Retour</a></button>
