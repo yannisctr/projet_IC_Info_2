@@ -51,7 +51,7 @@ if (!empty($_POST['login']) && !empty($_POST['mot_de_passe'])) {
 		if(($handle = fopen("csv-folder/chefdesection.csv", "r"))) { 
 			while(($data = fgetcsv($handle, 1000, ";"))) {
 				if($data[7] === $identifiant && $data[8] === $motdepasse){
-					$_SESSION['profil'] = 'salarie';
+					$_SESSION['profil'] = 'chefdesection';
 					$_SESSION['nom'] = $data[0];
 					$_SESSION['prenom'] = $data[1];
 					$_SESSION['pseudo'] = $data[7];

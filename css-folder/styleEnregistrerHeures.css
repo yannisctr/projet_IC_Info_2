@@ -1,9 +1,8 @@
 body{
-    margin: 0%;
     background-color: #E8E8F2;
     display: grid;
-    grid-template-columns: repeat(10,1fr) ;
-    grid-template-rows: 30px 60px repeat(8,1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 30px 60px 60px repeat(7, 1fr); /* Première ligne 30px, les autres 1fr */
 }
 
 @media screen and (max-width: 600px) {
@@ -41,7 +40,7 @@ body{
 .logo{
     width: 80%;
     margin: auto;
-    grid-column: 1 / 2; /* elmt prend toute la ligne */
+    grid-column: 1 / 2; 
     grid-row: 1;
     position: relative;
 }
@@ -55,15 +54,11 @@ h1 {
     font-size: 40px;
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-column: 1 / -1; 
     grid-row: 2;
 }
 
-
 table{
-    grid-column: 2 / 10; 
+    grid-column: 1 / -1; 
     grid-row: 3;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 3%;
 }

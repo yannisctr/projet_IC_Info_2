@@ -137,7 +137,7 @@ $conges_suivant_formatte = !empty($conges_suivant) ? formatCongesConsecutifs($co
         <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
 
         <nav>
-            <a href="../Infopage.php" class="link">Accueil</a>
+            <a href="Infopage.php" class="link">Accueil</a>
             <a href="mesInfos.php" class="link">Mes infos</a>
             <a href="../deconnexion.php" class="link">Déconnexion</a>  
         </nav>
