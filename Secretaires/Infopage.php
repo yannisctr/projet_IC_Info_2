@@ -93,12 +93,22 @@ if (($file = fopen("../Salariés/".$_GET['id']."/RecapMensuel.csv","r")) !== FAL
     <div id="slash"> / </div>
     <div id="totaux"> 30 </div>
     
-<!-- <div id="boutons"> 
-    <a href="ModifConge.php">Modifier Congés</a>
-    <a href="TraitementRecap.php"> Recapitulatif</a>
+ <div id="boutons"> 
+ <?php
+            if (isset($_GET['id'])) {
+                echo "<a href='supprimer_salarie.php?id=" . urlencode($_GET['id']) . "'>Supprimer</a>"; 
+            }
+        ?>
+    <form action="TraitementRecap.php" method="post">
+        <?php
+          echo '<input type="hidden" name="nomSalarie" id="nomSalarie" value="' . $_GET['id']. '">';
+          ?>
+       
+    
+        <input type="submit" value="Recapitulatif">
+    </form>
 
     </div>
-     -->
     
 
 <script src="Infopage.js"></script>

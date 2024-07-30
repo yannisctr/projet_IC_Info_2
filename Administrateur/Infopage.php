@@ -87,11 +87,19 @@ session_start();
     
     <div id="boutons"> 
         <?php
-            if (isset($id)) {
-                echo "<a href='supprimer_salarie.php?id=" . urlencode($id) . "'>Supprimer</a>"; 
+            if (isset($_GET['id'])) {
+                echo "<a href='supprimer_salarie.php?id=" . urlencode($_GET['id']) . "'>Supprimer</a>"; 
             }
         ?>
-        <a href="TraitementRecap.php"> Recapitulatif</a>
+           <form action="TraitementRecap.php" method="post">
+        <?php
+          echo '<input type="hidden" name="nomSalarie" id="nomSalarie" value="' . $_GET['id']. '">';
+          ?>
+       
+    
+        <input type="submit" value="Recapitulatif du mois ">
+    </form>
+
     </div>
 
 <script src="Infopage.js"></script>

@@ -129,7 +129,7 @@ nav a {
 
 #boutons a 
 {
-    font-weight: 600;
+    font-weight: 550;
     text-decoration: none;
     color: black;
     background-color: #F1ADAC;
@@ -142,11 +142,38 @@ nav a {
     transition: all .3s ease-out;
 }
 
+
 #boutons a:hover 
 {
     color: #E8E8F2;   
 }
 
+input[type="submit"] {   
+    margin-top: 7%;
+    font-weight: 530;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    background-color: #F1ADAC;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 1.5em;
+    box-shadow: 4px 4px 4px #00000054;  
+    transition: all .3s ease-out;
+    outline: none;
+    border: 0px;
+}
+
+
+input:hover 
+{
+    color: #E8E8F2;  
+    cursor: pointer;
+ 
+
+}
 
 #utilise 
 {
