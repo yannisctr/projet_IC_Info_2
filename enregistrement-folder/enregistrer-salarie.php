@@ -18,7 +18,6 @@ if (!isset($_SESSION['profil'])) {
 </head>
 <body>
 <div class="header">
-<div class="header">
         <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
         <button class="b1" type="button" onclick="location.href = '../Administrateur/accueil-admin.php';">Accueil</button>
     </div>
