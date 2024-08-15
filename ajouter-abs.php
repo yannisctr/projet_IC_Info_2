@@ -50,4 +50,3 @@ if (!isset($_SESSION['profil'])) {
     </div>
 </body>
 </html>
-<!-- comment -->
