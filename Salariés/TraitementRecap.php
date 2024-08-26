@@ -87,7 +87,7 @@ function genererPDFConges($data, $mois_actuel,$data_recap) {
     $pdf->Cell(0,10,$compteur." jours",0,1,'C');
     $pdf->Ln(3); 
     $pdf->SetFont('Arial', 'B', 15);
-    $pdf->Cell(0,10,"Absecences :",0,1,'C');
+    $pdf->Cell(0,10,"Abscences :",0,1,'C');
     $pdf->SetFont('Arial', '', 13);
     $pdf->Cell(0,10,iconv('UTF-8', 'ISO-8859-1//TRANSLIT', "justifiée(s) : ")." ".$data_recap[$mois_actuel][7]." jours",0,1,'C');
     $pdf->Cell(0,10,iconv('UTF-8', 'ISO-8859-1//TRANSLIT', "non justifiée(s) : ")." ".$data_recap[$mois_actuel][8]." jours",0,1,'C');
