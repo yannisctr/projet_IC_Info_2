@@ -97,7 +97,15 @@ session_start();
           ?>
        
     
-        <input type="submit" value="Recapitulatif du mois ">
+        <input class="Recap" type="submit" value="Recapitulatif du mois ">
+    </form>
+    <form action="reinitialisation.php" method="post">
+        <?php
+          echo '<input type="hidden" name="nomSalarie" id="nomSalarie" value="' . $_GET['id']. '">';
+          ?>
+       
+    
+        <input type="submit" value="Réinitialiser ">
     </form>
 
     </div>

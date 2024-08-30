@@ -29,7 +29,7 @@ if (!isset($_SESSION['profil'])) {
             <label for="QUi">QUI</label>
             <select name="selection" id="selection"> 
                 <?php
-                $fichier_section = '../csv-folder/folder-section/Danse.csv';
+                $fichier_section = '../csv-folder/folder-section/'.$_SESSION['section'].'.csv';
                 if (($handle = fopen($fichier_section, 'r')) !== FALSE) {
                     // Lire chaque ligne du fichier CSV
                     while (($row = fgetcsv($handle, 1000, ',')) !== FALSE) {
