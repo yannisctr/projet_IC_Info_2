@@ -13,6 +13,7 @@ if (!isset($_SESSION['profil'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-folder/ajouter-salarie-style.css">
     <title>Enregistrement de la suppression</title>
 </head>
 <body>

@@ -1,48 +1,40 @@
-body{
-    margin: 0%;
+/* Style global */
+body {
+    margin: 0;
     background-color: #E8E8F2;
     display: grid;
-    grid-template-columns: repeat(10,1fr) ;
-    grid-template-rows: 80px 60px repeat(8,1fr);
-}
-
-@media screen and (max-width: 600px) {
-    body {
-        padding: 20px;
-    }
-
-    input[type="text"],
-    input[type="password"],
-    input[type="submit"] {
-        width: 100%;
-    }
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 80px 60px repeat(8, 1fr);
 }
 
 .tête {
     background-color: #1E4F9D;
     width: 100%;
-    grid-column: 1 / -1; /* elmt prend toute la ligne */
-    grid-row: 1; /* elmt dans la première ligne */
+    grid-column: 1 / -1;
+    grid-row: 1;
     font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
     color: #E8E8F2;
-    text-align: center;
-    padding: 20px 0; 
-    box-sizing: border-box; 
+    text-align: right; /* Aligner les liens à droite */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .tête a {
     text-decoration: none;
-    color: inherit; /* pour garder la couleur du parent */
-    display: inline-block; 
-    margin-left: 20px; 
+    color: inherit;
+    margin-left: 20px;
 }
 
-.logo{
-    width: 80%;
-    margin: auto;
-    grid-column: 1 / 2; /* elmt prend toute la ligne */
+.logo {
+    width: 80px; /* Taille réduite du logo */
+    grid-column: 1 / 2; 
     grid-row: 1;
+    margin-left: 10px;
+    align-self: center;
+    justify-self: start; /* Alignement à gauche */
     position: relative;
 }
 
@@ -55,14 +47,84 @@ h1 {
     font-size: 40px;
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-column: 1 / -1;
     grid-row: 2;
+    text-align: center;
 }
 
-table{
-    grid-column: 2 / 8; 
+table {
+    grid-column: 2 / 8;
     grid-row: 3;
     font-family: 'Montserrat', sans-serif;
     margin-top: 3%;
+}
+
+/* Pour les petits écrans (smartphones) */
+@media screen and (max-width: 600px) {
+    body {
+        display: block;
+        padding: 20px;
+    }
+
+    .tête {
+        text-align: left;
+        padding-left: 10px;
+        flex-direction: column;
+        align-items: flex-start; /* Alignement des liens à gauche */
+    }
+
+    .tête a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .logo {
+        width: 60px; /* Taille du logo ajustée */
+        margin-left: 0;
+        grid-column: 1 / -1;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+        margin: 20px 0;
+        grid-column: 1 / -1;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        grid-column: 1 / -1;
+        font-size: 14px;
+    }
+}
+
+/* Pour les écrans moyens (tablettes) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .tête {
+        justify-content: space-between;
+        padding-left: 10px;
+    }
+
+    .logo {
+        width: 70px; /* Taille du logo pour les tablettes */
+        grid-column: 1 / 2;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 35px;
+        grid-column: 1 / -1;
+    }
+
+    table {
+        width: 90%;
+        margin-top: 20px;
+        grid-column: 1 / -1;
+    }
 }

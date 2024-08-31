@@ -1,47 +1,105 @@
-body{
-    margin: 0%;
+body {
+    margin: 0;
     background-color: #E8E8F2;
     display: grid;
-    grid-template-columns: repeat(10,1fr) ;
-    grid-template-rows:  repeat(10,1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .tête, .zoneRecherche, .zoneResultat {
+        grid-column: 1 / -1;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-left: 5%;
+    }
+
+    .recherche input {
+        width: 80%;
+        margin: 5% auto;
+        font-size: 18px; /* Augmenter la taille du texte dans l'input */
+    }
+
+    .recherche {
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 600px) {
     body {
-        padding: 20px;
+        padding: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
     }
 
-    input[type="text"],
-    input[type="password"],
-    input[type="submit"] {
+    .tête, .zoneRecherche, .zoneResultat {
+        grid-column: 1 / -1;
+        padding: 10px;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 28px; /* Taille du texte légèrement réduite mais encore lisible */
+        margin-left: 2%;
+    }
+
+    .recherche input {
+        width: 95%; /* Presque toute la largeur */
+        margin: 2% auto;
+        font-size: 20px; /* Texte plus grand pour meilleure lisibilité */
+    }
+
+    .recherche {
+        justify-content: center;
+    }
+
+    .logo {
         width: 100%;
+        grid-column: 1 / -1;
+    }
+
+    .tête a {
+        display: block;
+        margin: 10px 0;
+        font-size: 18px; /* Taille de police augmentée pour les liens */
+    }
+
+    .loupe-icon {
+        width: 30px;
+        height: 30px;
     }
 }
 
 .tête {
     background-color: #1E4F9D;
     width: 100%;
-    grid-column: 1 / -1; /* elmt prend toute la ligne */
-    grid-row: 1; /* elmt dans la première ligne */
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    color: #E8E8F2;
+    grid-column: 1 / -1;
+    grid-row: 1;
     text-align: center;
-    padding: 20px 0; 
-    box-sizing: border-box; 
+    padding: 20px 0;
+    box-sizing: border-box;
+    color: #E8E8F2;
+    font-size: 20px; /* Taille de police générale pour les écrans plus grands */
 }
 
 .tête a {
     text-decoration: none;
-    color: inherit; /* pour garder la couleur du parent */
-    display: inline-block; 
-    margin-left: 20px; 
+    color: inherit;
+    display: inline-block;
+    margin-left: 20px;
 }
 
-.logo{
+.logo {
     width: 80%;
     margin: auto;
-    grid-column: 1 / 2; /* elmt prend toute la ligne */
+    grid-column: 1 / 2;
     grid-row: 1;
     position: relative;
 }
@@ -55,8 +113,7 @@ h1 {
     font-size: 40px;
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-    grid-column: 1 / 5; /* elmt prend toute la ligne */
+    grid-column: 1 / 5;
     grid-row: 2;
 }
 
@@ -69,36 +126,30 @@ button {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: #C6D2EC ;
-    border: 0.1rem solid black ;
+    background-color: #C6D2EC;
+    border: 0.1rem solid black;
     margin-top: 2%;
-    background-image: linear-gradient(
-      to top left,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2) 30%,
-      rgba(0, 0, 0, 0)
-    );
-  }
-  
-  button:hover {
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+}
+
+button:hover {
     background-color: #92afefc0;
-  }
-  
-  button:active {
-    box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-  }
+}
+
+button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
 
 .recherche {
     display: flex;
-    align-items: center; 
-    justify-content: flex-start; 
-    gap: 10px; 
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 .recherche input {
     margin: 7%;
+    font-size: 18px; /* Taille du texte augmentée pour l'input */
 }
 
 .loupe-icon {
@@ -106,37 +157,32 @@ button {
     height: 30px;
 }
 
-
-.zoneRecherche{
+.zoneRecherche {
     border-radius: 10px;
-    background-color: #C6D2EC ;
-    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    background-color: #C6D2EC;
+    grid-column: 1 / -1;
     grid-row: 3;
     margin: 8px;
-
 }
 
-.zoneResultat{
+.zoneResultat {
     border-radius: 10px;
-    background-color: #C6D2EC ;
-    grid-column: 1 / -1; /* elmt prend toute la ligne */
-    grid-row: 4 /-1;
+    background-color: #C6D2EC;
+    grid-column: 1 / -1;
+    grid-row: 4 / -1;
     margin: 8px;
     position: relative;
-
 }
 
-h3{
-
+h3 {
     font-family: 'Exo', sans-serif;
-    font-size: 20px;
-    font-style: bold;
+    font-size: 22px; /* Taille de police légèrement augmentée */
+    font-weight: bold;
     margin-left: 3%;
 }
 
-.result{
+.result {
     font-family: 'Exo', sans-serif;
+    font-size: 18px; /* Taille de police augmentée pour le contenu des résultats */
     margin-left: 3%;
-
 }
-

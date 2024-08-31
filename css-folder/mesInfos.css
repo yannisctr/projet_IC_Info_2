@@ -1,17 +1,24 @@
-body {
-    background-color: #E8E8F2;
+/* Réinitialisation des marges et des espacements de base */
+body, h1, p {
     margin: 0;
     padding: 0;
+}
+
+/* Styles de base */
+body {
+    background-color: #E8E8F2;
     color: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+    padding: 20px; /* Ajouté pour le padding général */
+    box-sizing: border-box;
 }
 
 img.logo {
     width: 10%;
-    height: 20%;
+    height: auto; /* Maintient les proportions de l'image */
 }
 
 .header {
@@ -30,9 +37,9 @@ img.logo {
 }
 
 .b1 {
-    padding: 20px 30px;
+    padding: 10px 15px; /* Réduit les espacements pour mieux s'adapter */
     background-color: #1E4F9D;
-    font-size: 15px;
+    font-size: 14px; /* Réduit la taille du texte */
     color: #ffffff;
     cursor: pointer;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -46,7 +53,8 @@ img.logo {
 }
 
 h1 {
-    margin-top: 20px;
+    margin: 20px 0; /* Ajouté pour espacer le titre du contenu */
+    font-size: 1.5em; /* Taille du texte du titre */
 }
 
 p {
@@ -68,8 +76,10 @@ p {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 60%;
+    width: 100%; /* Utilise toute la largeur disponible */
+    max-width: 600px; /* Limite la largeur maximale pour une meilleure lisibilité */
     margin-top: 20px;
+    box-sizing: border-box;
 }
 
 .mesInfos p {
@@ -77,12 +87,29 @@ p {
     line-height: 1.5;
 }
 
+/* Styles pour les écrans de petite taille */
 @media screen and (max-width: 600px) {
-    body {
-        padding: 20px;
+    img.logo {
+        width: 30%; /* Ajuste la taille de l'image pour les petits écrans */
+    }
+
+    .header-buttons {
+        flex-direction: column; /* Les boutons sont empilés verticalement */
+        align-items: center; /* Centre les boutons */
+    }
+
+    .b1 {
+        width: 100%; /* Les boutons occupent toute la largeur disponible */
+        padding: 15px; /* Ajuste le padding pour les petits écrans */
     }
 
     .mesInfos {
-        width: 90%;
+        width: 100%; /* Occupe toute la largeur disponible */
+        padding: 15px; /* Réduit le padding */
+        box-shadow: none; /* Enlève l'ombre pour les petits écrans */
+    }
+
+    h1 {
+        font-size: 1.2em; /* Réduit la taille du titre pour les petits écrans */
     }
 }

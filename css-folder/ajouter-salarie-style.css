@@ -1,3 +1,4 @@
+/* Style global */
 body {
     background-color: #E8E8F2;
     margin: 0;
@@ -12,34 +13,35 @@ body {
 
 img {
     width: 100px;
-    height: 100px;
+    height: auto; /* Maintien des proportions de l'image */
 }
 
+/* Header */
 .header {
     background-color: #1E4F9D;
     width: 100%;
     display: flex;
-    justify-content: flex-start; /* Alignement à gauche */
+    justify-content: space-between; /* Aligne le logo et le bouton de déconnexion */
     align-items: center;
-    padding: 0px 20px;
+    padding: 10px 20px; /* Augmente la hauteur pour plus d'espace */
     box-sizing: border-box;
 }
 
 .logo {
-    width: 10%;
-    height: 20%;
+    width: 80px; /* Ajuste la taille du logo pour des écrans plus petits */
+    height: auto; /* Maintien des proportions de l'image */
 }
 
 .b1 {
-    margin-left: 70.85%;
-    padding: 30px;
+    padding: 10px 20px; /* Ajuste le padding pour une meilleure apparence */
     background-color: #1E4F9D;
-    font-size: 15px;
+    font-size: 14px; /* Réduit légèrement la taille de la police pour les petits écrans */
     color: #ffffff;
     cursor: pointer;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     transition: color 0.3s, background-color 0.3s;
     border: none;
+    border-radius: 5px; /* Ajoute des coins arrondis pour un design plus moderne */
 }
 
 .b1:hover {
@@ -47,17 +49,37 @@ img {
     color: #000000;
 }
 
+/* Conteneur principal */
+.centeredcase {
+    margin-top: 2%;
+    padding: 1em;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur maximale pour un meilleur affichage */
+}
+
+/* Conteneur de formulaires */
 .forms-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
     gap: 20px; /* Ajoute un espace entre les conteneurs */
+    flex-wrap: wrap; /* Permet aux conteneurs de passer à la ligne */
 }
 
+/* Conteneur individuel de formulaire */
 .form-container {
-    flex: 1; /* Permet aux conteneurs de prendre un espace égal */
-    margin: 0 10px; /* Marge horizontale pour un espace autour des conteneurs */
+    flex: 1;
+    margin: 0 10px;
     background-color: #93B2E4;
     padding: 2em;
     border-radius: 10px;
@@ -65,20 +87,23 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 280px; /* Assure une largeur minimale pour les petits écrans */
 }
 
+/* Formulaires */
 form {
-    width: 100%; /* Prendre toute la largeur du conteneur */
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Groupes de formulaires */
 .form-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 1.5em; /* Espacement entre les groupes de formulaires */
+    margin-bottom: 1.5em;
     width: 100%;
 }
 
@@ -87,6 +112,7 @@ form {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Champs de formulaire */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -96,47 +122,63 @@ input[type="submit"] {
     margin: 5px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%; /* Prendre toute la largeur du conteneur */
+    width: 100%;
     color: #666;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+    box-sizing: border-box;
 }
 
+/* Bouton de soumission */
 input[type="submit"] {
     background-color: #1E4F9D;
     color: #E8E8F2;
     cursor: pointer;
-    width: auto; /* Ajuste la largeur du bouton de soumission */
+    width: auto;
 }
 
-.centeredcase {
-    margin-top: 3%;
-    padding: 2em;
-    padding-left: 10%;
-    padding-right: 10%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (max-width: 600px) {
-    body {
-        padding: 20px;
-    }
-
+/* Media Queries pour écrans petits */
+@media screen and (max-width: 768px) {
     .forms-container {
         flex-direction: column;
-        gap: 20px; /* Ajoute un espace entre les conteneurs */
+        gap: 20px;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    input[type="submit"] {
-        width: 100%;
+    .logo {
+        width: 60px;
+    }
+
+    .b1 {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .centeredcase {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .b1 {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .centeredcase {
+        padding: 1em;
+        margin-top: 1%;
+    }
+
+    .form-container {
+        min-width: 100%;
+        margin: 0;
     }
 }

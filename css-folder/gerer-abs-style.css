@@ -8,49 +8,146 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+    font-size: 1rem; /* Utilisation de rem pour des unités relatives */
 }
 
 img {
-    width: 100px;
-    height: 50px;
+    width: 80px;
+    height: 40px;
 }
 
 .header {
     background-color: #1E4F9D;
     width: 100%;
     display: flex;
-    justify-content: flex-start; /* Alignement à gauche */
+    justify-content: space-between; /* Distribution de l'espace entre les éléments */
     align-items: center;
-    padding-left: 2%;
+    padding: 1rem 2%; /* Unités relatives et pourcentages pour les marges */
     box-sizing: border-box;
 }
 
 .logo {
-    width: 10%;
-    height: 20%;
+    width: 15%; /* Taille adaptative en pourcentage */
+    max-width: 100px; /* Limite maximale pour les grands écrans */
+    height: auto; /* Conserve les proportions */
 }
 
 .button-container {
-    margin-left: 70%;
+    display: flex;
+    flex-direction: row; /* Disposition en ligne */
+    gap: 1rem; /* Espacement entre les boutons */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; /* Alignement à droite */
+    margin-left: auto;
 }
 
-
 .b1 {
-    margin: 0px;
-    padding: 25px; /* Réduire le padding pour un meilleur rendu */
+    margin: 0;
+    padding: 0.75rem 1rem; /* Padding réduit pour un meilleur rendu */
     background-color: #1E4F9D;
-    font-size: 15px;
+    font-size: 1rem;
     color: #ffffff;
     cursor: pointer;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     transition: color 0.3s, background-color 0.3s;
     border: none;
-    text-align: center; /* Centrer le texte */
+    text-align: center;
+    border-radius: 5px; /* Ajout de coins arrondis */
 }
 
 .b1:hover {
     background-color: #ffffff;
     color: #000000;
+}
+
+.centeredcase {
+    width: 90%;
+    max-width: 1200px; /* Largeur maximale pour les grands écrans */
+    margin: 2rem auto; /* Centrage avec des marges automatiques */
+    background-color: #ffffff;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Ajout de coins arrondis */
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #1E4F9D;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Affiche les éléments de la header en colonne */
+        align-items: center;
+    }
+
+    .logo {
+        width: 30%; /* Agrandit le logo sur les petits écrans */
+    }
+
+    .button-container {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .b1 {
+        padding: 0.5rem; /* Réduit le padding sur les petits écrans */
+        font-size: 0.875rem; /* Taille de police plus petite */
+    }
+
+    .centeredcase {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    th, td {
+        padding: 0.5rem; /* Réduction de la padding pour un meilleur affichage */
+        font-size: 0.875rem; /* Réduction de la taille de la police pour le tableau */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .b1 {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .centeredcase {
+        padding: 0.5rem;
+    }
+
+    th, td {
+        padding: 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
 }
