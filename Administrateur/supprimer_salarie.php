@@ -13,11 +13,12 @@ if (!isset($_SESSION['profil'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css-folder/ajouter-salarie-style.css">
     <title>Enregistrement de la suppression</title>
 </head>
 <body>
     <div class="header">
-        <img class="logo" src="img-package/logo_alb.png" alt="logo-alb">
+        <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
     </div>
     <?php
 
