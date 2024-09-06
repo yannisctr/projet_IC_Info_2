@@ -7,32 +7,34 @@ body{
     grid-template-columns: repeat(10,1fr) ;
     grid-template-rows:  repeat(10,1fr);
     font-family: Montserrat;
+    font-size: 1rem;
 }
 
+.navbg {
+    background-color: #1E4F9D;
+    grid-column: 1 / -1; /* elmt prend toute la ligne */
+    grid-row: 1; /* elmt dans la première ligne */
+    z-index: -20
+}
+ .logo{
+    width: 80%;
+    margin: auto;
+    grid-column: 1 / 2; /* elmt prend toute la ligne */
+    grid-row: 1;
 
-@media screen and (max-width: 600px) {
-    body {
-        padding: 20px;
-    }
-
-    input[type="text"],
-    input[type="password"],
-    input[type="submit"] {
-        width: 100%;
-    }
 }
 
 nav {
-    background-color: #1E4F9D;
-    width: 100%;
     grid-column: 1 / -1; /* elmt prend toute la ligne */
-    grid-row: 1; /* elmt dans la première ligne */
+    grid-row: 1; 
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     color: #E8E8F2;
     text-align: center;
     padding: 20px 0; 
     box-sizing: border-box; 
+    font-size: 1.2rem;
 }
 
 nav a {
@@ -42,13 +44,6 @@ nav a {
     margin-left: 20px; 
 }
 
-.logo{
-    width: 80%;
-    margin: auto;
-    grid-column: 1 / 2; /* elmt prend toute la ligne */
-    grid-row: 1;
-    position: relative;
-}
 
 .calendar-box
 {
@@ -206,6 +201,7 @@ h3
     align-content: center;
     justify-self: center;
     background-color: #fad0cf ;
+    font-size: .5rem;
 
 }
 
@@ -330,4 +326,57 @@ h3
     align-self: center;
     justify-self: center;
     transform:  rotate(130deg);
+}
+.Conge-txt  {
+    grid-area: 2/1/2/1;
+     justify-self : center; 
+     align-self: end;
+}
+@media (max-width : 480px) {
+    body {
+        font-size: 0.9rem; /* Smaller text for smaller screens */
+    }
+    .Conge-txt {font-size: medium; grid-area: 2/1/2/3;}
+    .jauge-boite {grid-area: 2/3/2/9;}
+    #utilise { font-size: small; grid-area:3 / 3 / 3 / 4 ;}
+    #slash {font-size: small;grid-area: 3 / 5 / 3 / 5;}
+    #totaux {font-size: small;grid-area: 3 / 8 / 3 / 8;}
+    .calendar-box {
+        font-size: smaller;
+        grid-area: 3 / 2 / 7 / 10;
+        margin-top: 8%;
+    }
+    .infotext {grid-area: 7 / 2 / 10 / 10;font-size: x-small;}
+    #boutons {grid-area: 10 / 2 / 10 / 10;}
+   
+    nav {
+        font-size: 1rem; /* Adjust nav font size for smaller screens */
+        padding: 0%;
+        align-self: last baseline;
+    }
+    .logo { width: 80%;grid-area: 1/4/1/7;}
+}
+@media (min-width:481px) and (max-width : 1050px) {
+    body {
+        font-size: 0.9rem; /* Smaller text for smaller screens */
+    }
+    .Conge-txt {font-size: medium; grid-area: 2/1/2/3;}
+    .jauge-boite {grid-area: 2/3/2/9;}
+    #utilise { font-size: small; grid-area:3 / 3 / 3 / 4 ;}
+    #slash {font-size: small;grid-area: 3 / 5 / 3 / 5;}
+    #totaux {font-size: small;grid-area: 3 / 8 / 3 / 8;}
+    .calendar-box {
+        font-size: smaller;
+        grid-area: 3 / 3 / 7 / 9;
+        margin-top: 8%;
+    }
+    .infotext {grid-area: 7 / 2 / 10 / 10;border-radius: 30px;font-size: x-small;}
+    #boutons {grid-area: 10 / 2 / 10 / 10;}
+   
+    nav {
+        font-size: 1rem; /* Adjust nav font size for smaller screens */
+        padding: 0%;
+        align-self: last baseline;
+    }
+    .logo { width: 80%;grid-area: 1/4/1/7;}
 }

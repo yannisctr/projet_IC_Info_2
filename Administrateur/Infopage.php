@@ -15,7 +15,8 @@ session_start();
     <title>Rechercher un salarié</title>
 </head>
 <body>
-    <img class="logo" src="img/logo_alb.png" alt="logo-alb">
+    <div class="navbg"> </div>
+    <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
     
     <nav>
         <a href="accueil-admin.php" class="link">Accueil</a>
@@ -77,7 +78,7 @@ session_start();
         ?>
         </div>
     
-        <h3 style="grid-area: 2/1/2/1; justify-self : center; align-self: end;">Congés :</h3>
+        <h3 class="Conge-txt">Congés :</h3>
         <div class="jauge-boite">
             <div id="jauge"></div>
         </div>

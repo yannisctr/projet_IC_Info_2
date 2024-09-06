@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
     <meta name="author" content="Chris" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -14,6 +15,8 @@
     <title>Rechercher un salarié</title>
 </head>
 <body>
+    <div class="navbg"> </div>
+    
     <img class="logo" src="../img-package/logo_alb.png" alt="logo-alb">
     
 
@@ -23,6 +26,8 @@
         <a href="../deconnexion.php" class="link">Déconnexion</a>  
     </nav>
 
+
+    
     <div class="calendar-box">
         <div class="calendar"> 
             <h2 id="mois"> </h2>
@@ -82,7 +87,7 @@ if (($file = fopen($_SESSION['pseudo']."/RecapMensuel.csv","r")) !== FALSE ) {
     </div>
    
         
-    <h3 style="grid-area: 2/1/2/1; justify-self : center; align-self: end;">Congés :</h3>
+    <h3 class="Conge-txt">Congés :</h3>
     <div class="jauge-boite">
         <div id="jauge"></div>
         
